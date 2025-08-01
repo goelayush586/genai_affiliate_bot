@@ -21,8 +21,8 @@ It includes authentication, chat history, and a reinforcement learning-style fee
 
 | Layer    | Tool                    |
 |----------|-------------------------|
-| Frontend | Gradio                  |
-| Backend  | Python + FastAPI logic  |
+| Frontend | Streamlit                 |
+| Backend  | Python + streamlit logic  |
 | LLM      | OpenAI GPT (via API)    |
 | Auth     | bcrypt + session cookies|
 | Database | SQLite                  |
@@ -30,6 +30,4 @@ It includes authentication, chat history, and a reinforcement learning-style fee
 | Deploy   | Hugging Face Spaces     |
 
 ---
-
-## 🏗️ Folder Structure
 
