@@ -1,126 +1,35 @@
-GenAI Chatbot with RL: Why Creatives are Crucial in Affiliate Marketing
-An interactive chatbot powered by an LLM that educates users on why creatives are crucial in affiliate marketing. It includes authentication, chat history, and a reinforcement learning-style feedback loop to improve responses over time.
+# 🧠 GenAI Chatbot with RL: Why Creatives are Crucial in Affiliate Marketing
 
-🚀 Features
-✅ LLM-powered chatbot (OpenAI API)
+An interactive chatbot powered by an LLM that educates users on **why creatives are crucial in affiliate marketing**.  
+It includes authentication, chat history, and a reinforcement learning-style feedback loop to improve responses over time.
 
-✅ Clean Gradio-based GUI
+---
 
-✅ User authentication (signup/login with password hashing)
+## 🚀 Features
 
-✅ Chat history with timestamps and session grouping
+- ✅ LLM-powered chatbot (OpenAI API)
+- ✅ Clean Gradio-based GUI
+- ✅ User authentication (signup/login with password hashing)
+- ✅ Chat history with timestamps and session grouping
+- ✅ Feedback collection (thumbs up/down)
+- ✅ Reinforcement Learning simulation using reward scoring
+- ✅ Deployed on Hugging Face Spaces
 
-✅ Feedback collection (thumbs up/down)
+---
 
-✅ Reinforcement Learning simulation using reward scoring
+## 📌 Tech Stack
 
-✅ Deployed on Hugging Face Spaces
+| Layer    | Tool                    |
+|----------|-------------------------|
+| Frontend | Gradio                  |
+| Backend  | Python + FastAPI logic  |
+| LLM      | OpenAI GPT (via API)    |
+| Auth     | bcrypt + session cookies|
+| Database | SQLite                  |
+| RL Logic | Rule-based Reward Feedback |
+| Deploy   | Hugging Face Spaces     |
 
-📌 Tech Stack
-Layer	Tool
-Frontend	Gradio
-Backend	Python + FastAPI logic
-LLM	OpenAI GPT (via API)
-Auth	bcrypt + session cookies
-Database	SQLite
-RL Logic	Rule-based Reward Feedback
-Deploy	Hugging Face Spaces
+---
 
-🏗️ Folder Structure
-bash
-Copy
-Edit
-genai_affiliate_bot/
-├── app.py                  # Main app entry point
-├── auth.py                 # Authentication logic
-├── chatbot.py              # Chat logic + LLM integration
-├── db.py                   # SQLite DB functions
-├── feedback.py             # RL logic: feedback → reward updates
-├── requirements.txt        # Dependencies
-├── README.md               # Project documentation
-├── .gitignore              # Ignore .env & __pycache__
-└── templates/
-    └── style.css           # Optional styling
-🛠️ Setup Instructions
-🔹 Local Setup
-Clone the repo:
+## 🏗️ Folder Structure
 
-bash
-Copy
-Edit
-git clone https://github.com/goelayush586/genai_affiliate_bot.git
-cd genai_affiliate_bot
-Create .env file:
-
-ini
-Copy
-Edit
-OPENAI_API_KEY=your-openai-key
-Make sure to exclude this file from Git using .gitignore.
-
-Install dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the app:
-
-bash
-Copy
-Edit
-python app.py
-🔹 Hugging Face Spaces Deployment
-Create a new Space (Streamlit or Gradio).
-
-Upload all files from the project.
-
-In README.md, explain .env usage but don’t upload secrets.
-
-Set up secrets via Hugging Face Secrets tab (for API keys).
-
-The app will run automatically if app.py and requirements.txt are present.
-
-🧠 RL Feedback Loop
-After each message, the user gives a thumbs up/down.
-
-Each feedback is stored with the response in SQLite.
-
-A reward score is tracked per message.
-
-If a pattern of poor feedback is observed, prompt tuning logic adapts future completions (simulated RL approach).
-
-🔐 Authentication
-Users can sign up and login.
-
-Passwords are hashed using bcrypt.
-
-Sessions are stored in memory (can be extended with JWT for production).
-
-💬 Chat History
-All conversations are timestamped and session-grouped.
-
-Logged-in users can view full chat history upon returning.
-
-🧪 Simulate RL Loop
-To test the RL logic:
-
-Ask multiple questions and submit feedback.
-
-Check how low-rated responses result in adapted prompt behavior.
-
-You can view reward tracking in the messages table of the SQLite DB.
-
-🐛 Known Issues
-No real-time online learning due to LLM API constraints.
-
-Reward tuning is rule-based, not fine-tuned learning.
-
-🔮 Future Improvements
-Add persistent session storage (Redis / JWT).
-
-Replace OpenAI API with open-source model (Llama 3 / Mixtral).
-
-Use full RLHF (fine-tune model using user feedback).
-
-Improve UI layout for mobile responsiveness.
